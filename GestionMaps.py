@@ -13,6 +13,8 @@ import folium
 from folium import plugins
 from streamlit_folium import st_folium
 import time
+import uuid
+
 
 # Configuración de la página
 st.set_page_config(
@@ -101,7 +103,11 @@ if menu == "🗺️ Gestionar Territorios":
     if "longitud_base" not in st.session_state:
         st.session_state.longitud_base = -106.4850
 
+    map_data = None
+
     col1, col2 = st.columns([2, 1])
+
+
 
     # --- Columna derecha: formulario de datos ---
     with col2:
